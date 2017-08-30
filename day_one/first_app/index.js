@@ -16,12 +16,15 @@ class Button2 extends React.Component {
   };
 
   f1() {
-    console.log('test');
+    // setState is like "merge with current state"
+    this.setState({
+      counter: 2
+    });
   }
 
   render() {
     return (
-      <button onClick={this.f1}>
+      <button onClick={this.f1.bind(this)}>
         {this.props.label}
         -- {this.state.counter}
       </button>

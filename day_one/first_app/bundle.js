@@ -9789,14 +9789,17 @@ var Button2 = function (_React$Component) {
   _createClass(Button2, [{
     key: 'f1',
     value: function f1() {
-      console.log('test');
+      // setState is like "merge with current state"
+      this.setState({
+        counter: 2
+      });
     }
   }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'button',
-        { onClick: this.f1 },
+        { onClick: this.f1.bind(this) },
         this.props.label,
         '-- ',
         this.state.counter
