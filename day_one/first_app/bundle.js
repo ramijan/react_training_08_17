@@ -9770,30 +9770,31 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Button2 = function (_React$Component) {
   _inherits(Button2, _React$Component);
 
-  // this is a more efficient way to bind this
-  // so it's not happening on every re-render
   function Button2() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, Button2);
 
-    var _this = _possibleConstructorReturn(this, (Button2.__proto__ || Object.getPrototypeOf(Button2)).call(this));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
 
-    _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Button2.__proto__ || Object.getPrototypeOf(Button2)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       counter: 1
-    };
-
-    _this.f1 = _this.f1.bind(_this);
-    return _this;
-  }
-
-  _createClass(Button2, [{
-    key: 'f1',
-    value: function f1() {
+    }, _this.f1 = function () {
       // setState is like "merge with current state"
-      this.setState({
+      _this.setState({
         counter: 2
       });
-    }
-  }, {
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  // simpler way to bind this, but it's stage-3
+
+
+  _createClass(Button2, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(

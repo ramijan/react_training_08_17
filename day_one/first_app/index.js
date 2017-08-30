@@ -11,17 +11,12 @@ import ReactDOM from 'react-dom';
 // called a "class component"
 // only class components have state
 class Button2 extends React.Component {
-  // this is a more efficient way to bind this
-  // so it's not happening on every re-render
-  constructor() {
-    super()
-    this.f1 = this.f1.bind(this);
-  }
   state = {
     counter: 1
   };
 
-  f1() {
+  // simpler way to bind this, but it's stage-3
+  f1 = () => {
     // setState is like "merge with current state"
     this.setState({
       counter: 2
