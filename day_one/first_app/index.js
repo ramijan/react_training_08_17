@@ -7,18 +7,19 @@ class App extends React.PureComponent {
     counter: 99
   };
 
-  incrementCounter = () => {
+  incrementCounter = (increment) => {
     this.setState((prevState) => {
-      return {counter: prevState.counter+1};
+      return {counter: prevState.counter + increment};
     });
   }
 
   render() {
     return (
       <div>
-        <Button label={this.state.counter} onClick={this.incrementCounter} />
-        <Button label={this.state.counter} onClick={this.incrementCounter} />
-        <Button label={this.state.counter} onClick={this.incrementCounter} />
+        <Button increment={1} onClick={this.incrementCounter} />
+        <Button increment={10} onClick={this.incrementCounter} />
+        <Button increment={-5} onClick={this.incrementCounter} />
+        <div>{this.state.counter}</div>
       </div>
     );
   }
