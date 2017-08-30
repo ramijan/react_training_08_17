@@ -18,8 +18,10 @@ class Button2 extends React.Component {
   // simpler way to bind this, but it's stage-3
   f1 = () => {
     // setState is like "merge with current state"
-    this.setState({
-      counter: this.state.counter+1;
+    // if you are going to use previous state to calculate new state, better
+    // to use function argument instead of object.  Because setState is async
+    this.setState((prevState) => {
+      return {counter: prevState.counter+1};
     });
   }
 
