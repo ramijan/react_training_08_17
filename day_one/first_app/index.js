@@ -35,16 +35,19 @@ class Button2 extends React.Component {
   }
 }
 
-// called a "component element"
-const tree = (
-  <div>
-    <input id="inputElement" />
-    <a href="#" onClick={()=>{document.getElementById('inputElement').focus();}}>Focus Input</a>
-    <Button2 label="Save2" />
-  </div>
-);
+class App extends React.PureComponent {
+  render() {
+    return (
+      <div>
+        <input ref="inputElement" />
+        <a href="#" onClick={()=>{this.refs.inputElement.focus();}}>Focus Input</a>
+        <Button2 label="Save2" />
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
-  tree,
+  <App />,
   document.getElementById('root')
 );

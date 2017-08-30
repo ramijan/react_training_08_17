@@ -9811,24 +9811,40 @@ var Button2 = function (_React$Component) {
   return Button2;
 }(_react2.default.Component);
 
-// called a "component element"
+var App = function (_React$PureComponent) {
+  _inherits(App, _React$PureComponent);
 
+  function App() {
+    _classCallCheck(this, App);
 
-var tree = _react2.default.createElement(
-  'div',
-  null,
-  _react2.default.createElement('input', { id: 'inputElement' }),
-  _react2.default.createElement(
-    'a',
-    { href: '#', onClick: function onClick() {
-        document.getElementById('inputElement').focus();
-      } },
-    'Focus Input'
-  ),
-  _react2.default.createElement(Button2, { label: 'Save2' })
-);
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+  }
 
-_reactDom2.default.render(tree, document.getElementById('root'));
+  _createClass(App, [{
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('input', { ref: 'inputElement' }),
+        _react2.default.createElement(
+          'a',
+          { href: '#', onClick: function onClick() {
+              _this3.refs.inputElement.focus();
+            } },
+          'Focus Input'
+        ),
+        _react2.default.createElement(Button2, { label: 'Save2' })
+      );
+    }
+  }]);
+
+  return App;
+}(_react2.default.PureComponent);
+
+_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
 
 /***/ }),
 /* 82 */
