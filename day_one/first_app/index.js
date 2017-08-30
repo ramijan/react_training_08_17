@@ -38,6 +38,8 @@ class Button2 extends React.Component {
 // called a "component element"
 const tree = (
   <div>
+    <input id="inputElement" />
+    <a href="#" onClick={()=>{document.getElementById('inputElement').focus();}}>Focus Input</a>
     <Button2 label="Save2" />
   </div>
 );

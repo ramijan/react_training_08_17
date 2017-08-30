@@ -9817,6 +9817,14 @@ var Button2 = function (_React$Component) {
 var tree = _react2.default.createElement(
   'div',
   null,
+  _react2.default.createElement('input', { id: 'inputElement' }),
+  _react2.default.createElement(
+    'a',
+    { href: '#', onClick: function onClick() {
+        document.getElementById('inputElement').focus();
+      } },
+    'Focus Input'
+  ),
   _react2.default.createElement(Button2, { label: 'Save2' })
 );
 
