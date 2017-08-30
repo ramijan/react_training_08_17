@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// react 'component'
+// called a "function component"
 function Button(props) {
   return (
     <button>{props.label}</button>
   );
 }
 
-// second syntax for react component
+// called a "class component"
 class Button2 extends React.Component {
   render() {
     return (
@@ -17,6 +17,7 @@ class Button2 extends React.Component {
   }
 }
 
+// called a "component element"
 const tree = (
   <div>
     <Button label="Save" />
