@@ -9746,33 +9746,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+setInterval(() => {
 
-document.getElementById('js').innerHTML = `
-  <div>
-    <h2>Hello JS</h2>
-    <span>${new Date()}</span>
-  </div>
-`
+  const jsTree = `
+    <div>
+      <h2>Hello JS</h2>
+      <span>${new Date()}</span>
+    </div>
+  `;
 
-const tree = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-  'div',
-  null,
-  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    'h2',
+  const tree = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'div',
     null,
-    'Hello React'
-  ),
-  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    'span',
-    null,
-    'Date...'
-  )
-);
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'h2',
+      null,
+      'Hello React'
+    ),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'span',
+      null,
+      new Date().toString()
+    )
+  );
 
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(
-  tree,
-  document.getElementById('root')
-)
+  document.getElementById('js').innerHTML = jsTree;
+  __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(
+    tree,
+    document.getElementById('root')
+  );
+}, 1000);
 
 
 /***/ }),

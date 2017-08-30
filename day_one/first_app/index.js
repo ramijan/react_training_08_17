@@ -1,30 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+setInterval(() => {
 
-document.getElementById('js').innerHTML = `
-  <div>
-    <h2>Hello JS</h2>
-    <span>${new Date()}</span>
-  </div>
-`
+  const jsTree = `
+    <div>
+      <h2>Hello JS</h2>
+      <span>${new Date()}</span>
+    </div>
+  `;
 
-const tree = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h2',
+  const tree = React.createElement(
+    'div',
     null,
-    'Hello React'
-  ),
-  React.createElement(
-    'span',
-    null,
-    'Date...'
-  )
-);
+    React.createElement(
+      'h2',
+      null,
+      'Hello React'
+    ),
+    React.createElement(
+      'span',
+      null,
+      new Date().toString()
+    )
+  );
 
-ReactDOM.render(
-  tree,
-  document.getElementById('root')
-)
+  document.getElementById('js').innerHTML = jsTree;
+  ReactDOM.render(
+    tree,
+    document.getElementById('root')
+  );
+}, 1000);
