@@ -11,24 +11,11 @@ setInterval(() => {
     </div>
   `;
 
-  const tree = React.createElement(
-    'div',
-    null,
-    React.createElement(
-      'h2',
-      null,
-      'Hello React'
-    ),
-    React.createElement(
-      'input',
-      null
-    ),
-    React.createElement(
-      'span',
-      null,
-      new Date().toString()
-    )
-  );
+  const tree = <div>
+    <h2>Hello JS</h2>
+    <input />
+    <span>{new Date()}</span>
+  </div>;
 
   document.getElementById('js').innerHTML = jsTree;
   ReactDOM.render(
