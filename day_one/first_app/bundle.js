@@ -9759,23 +9759,26 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 // called a "function component"
-function Button(props) {
-  return _react2.default.createElement(
-    'button',
-    null,
-    props.label
-  );
-}
+// function Button(props) {
+//   return (
+//     <button>{props.label}</button>
+//   );
+// }
 
 // called a "class component"
-
+// only class components have state
 var Button2 = function (_React$Component) {
   _inherits(Button2, _React$Component);
 
   function Button2() {
     _classCallCheck(this, Button2);
 
-    return _possibleConstructorReturn(this, (Button2.__proto__ || Object.getPrototypeOf(Button2)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Button2.__proto__ || Object.getPrototypeOf(Button2)).call(this));
+
+    _this.state = {
+      counter: 1
+    };
+    return _this;
   }
 
   _createClass(Button2, [{
@@ -9784,7 +9787,9 @@ var Button2 = function (_React$Component) {
       return _react2.default.createElement(
         'button',
         null,
-        this.props.label
+        this.props.label,
+        ' -- ',
+        this.state.counter
       );
     }
   }]);
@@ -9798,7 +9803,6 @@ var Button2 = function (_React$Component) {
 var tree = _react2.default.createElement(
   'div',
   null,
-  _react2.default.createElement(Button, { label: 'Save' }),
   _react2.default.createElement(Button2, { label: 'Save2' })
 );
 

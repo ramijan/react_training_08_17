@@ -2,17 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // called a "function component"
-function Button(props) {
-  return (
-    <button>{props.label}</button>
-  );
-}
+// function Button(props) {
+//   return (
+//     <button>{props.label}</button>
+//   );
+// }
 
 // called a "class component"
+// only class components have state
 class Button2 extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      counter: 1
+    };
+  }
+
   render() {
     return (
-      <button>{this.props.label}</button>
+      <button>{this.props.label} -- {this.state.counter}</button>
     );
   }
 }
@@ -20,7 +28,6 @@ class Button2 extends React.Component {
 // called a "component element"
 const tree = (
   <div>
-    <Button label="Save" />
     <Button2 label="Save2" />
   </div>
 );
