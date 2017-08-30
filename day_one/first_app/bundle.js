@@ -9770,20 +9770,19 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Button2 = function (_React$Component) {
   _inherits(Button2, _React$Component);
 
+  // this is a more efficient way to bind this
+  // so it's not happening on every re-render
   function Button2() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
     _classCallCheck(this, Button2);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+    var _this = _possibleConstructorReturn(this, (Button2.__proto__ || Object.getPrototypeOf(Button2)).call(this));
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Button2.__proto__ || Object.getPrototypeOf(Button2)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+    _this.state = {
       counter: 1
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    };
+
+    _this.f1 = _this.f1.bind(_this);
+    return _this;
   }
 
   _createClass(Button2, [{
@@ -9799,7 +9798,7 @@ var Button2 = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'button',
-        { onClick: this.f1.bind(this) },
+        { onClick: this.f1 },
         this.props.label,
         '-- ',
         this.state.counter

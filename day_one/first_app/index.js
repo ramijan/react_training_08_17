@@ -11,6 +11,12 @@ import ReactDOM from 'react-dom';
 // called a "class component"
 // only class components have state
 class Button2 extends React.Component {
+  // this is a more efficient way to bind this
+  // so it's not happening on every re-render
+  constructor() {
+    super()
+    this.f1 = this.f1.bind(this);
+  }
   state = {
     counter: 1
   };
@@ -24,7 +30,7 @@ class Button2 extends React.Component {
 
   render() {
     return (
-      <button onClick={this.f1.bind(this)}>
+      <button onClick={this.f1}>
         {this.props.label}
         -- {this.state.counter}
       </button>
