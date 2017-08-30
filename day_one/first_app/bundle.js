@@ -9750,20 +9750,19 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// react 'component'
+function Button() {
+  return _react2.default.createElement(
+    'button',
+    null,
+    'Go'
+  );
+}
+
 var tree = _react2.default.createElement(
   'div',
   null,
-  _react2.default.createElement(
-    'h2',
-    null,
-    'Hello React'
-  ),
-  _react2.default.createElement('input', null),
-  _react2.default.createElement(
-    'span',
-    null,
-    new Date().toString()
-  )
+  _react2.default.createElement(Button, null)
 );
 
 _reactDom2.default.render(tree, document.getElementById('root'));
