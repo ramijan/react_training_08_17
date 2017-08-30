@@ -20,7 +20,7 @@ class Button extends Component {
 
   render() {
     return (
-      <button type="submit" onClick={this.incrementCounter}>
+      <button onClick={this.incrementCounter}>
         {this.state.counter}
       </button>
     );

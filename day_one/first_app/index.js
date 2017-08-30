@@ -6,7 +6,9 @@ class App extends React.PureComponent {
   render() {
     return (
       <div>
+        <Button label="Save1" />
         <Button label="Save2" />
+        <Button label="Save3" />
       </div>
     );
   }
