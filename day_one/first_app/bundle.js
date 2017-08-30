@@ -9760,11 +9760,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 // react 'component'
 function Button(props) {
-  console.log(props);
   return _react2.default.createElement(
     'button',
     null,
-    'Go'
+    props.label
   );
 }
 
@@ -9785,7 +9784,7 @@ var Button2 = function (_React$Component) {
       return _react2.default.createElement(
         'button',
         null,
-        'Go 2'
+        this.props.label
       );
     }
   }]);
@@ -9796,8 +9795,8 @@ var Button2 = function (_React$Component) {
 var tree = _react2.default.createElement(
   'div',
   null,
-  _react2.default.createElement(Button, { a: '1', b: '2' }),
-  _react2.default.createElement(Button2, null)
+  _react2.default.createElement(Button, { label: 'Save' }),
+  _react2.default.createElement(Button2, { label: 'Save2' })
 );
 
 _reactDom2.default.render(tree, document.getElementById('root'));

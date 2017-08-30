@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom';
 
 // react 'component'
 function Button(props) {
-  console.log(props)
   return (
-    <button>Go</button>
+    <button>{props.label}</button>
   );
 }
 
@@ -13,15 +12,15 @@ function Button(props) {
 class Button2 extends React.Component {
   render() {
     return (
-      <button>Go 2</button>
+      <button>{this.props.label}</button>
     );
   }
 }
 
 const tree = (
   <div>
-    <Button a="1" b="2"/>
-    <Button2 />
+    <Button label="Save" />
+    <Button2 label="Save2" />
   </div>
 );
 
