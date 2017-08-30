@@ -9796,7 +9796,9 @@ var Button2 = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'button',
-        null,
+        { onClick: function onClick() {
+            return alert('hello');
+          } },
         this.props.label,
         '-- ',
         this.state.counter,

@@ -21,7 +21,7 @@ class Button2 extends React.Component {
 
   render() {
     return (
-      <button>
+      <button onClick={() => alert('hello')}>
         {this.props.label}
         -- {this.state.counter}
         -- {this.f1()}
