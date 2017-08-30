@@ -8,7 +8,7 @@ const config = {
   },
   module: {
     rules: [
-      { test: /\.txt$/, use: 'raw-loader' }
+      { test: /\.js$/, use: 'babel-loader' }
     ]
   }
 };
