@@ -16,15 +16,14 @@ class Button2 extends React.Component {
   };
 
   f1() {
-    return 'test';
+    console.log('test');
   }
 
   render() {
     return (
-      <button onClick={() => alert('hello')}>
+      <button onClick={this.f1}>
         {this.props.label}
         -- {this.state.counter}
-        -- {this.f1()}
       </button>
     );
   }

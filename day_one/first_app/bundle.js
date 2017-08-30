@@ -9789,21 +9789,17 @@ var Button2 = function (_React$Component) {
   _createClass(Button2, [{
     key: 'f1',
     value: function f1() {
-      return 'test';
+      console.log('test');
     }
   }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'button',
-        { onClick: function onClick() {
-            return alert('hello');
-          } },
+        { onClick: this.f1 },
         this.props.label,
         '-- ',
-        this.state.counter,
-        '-- ',
-        this.f1()
+        this.state.counter
       );
     }
   }]);
