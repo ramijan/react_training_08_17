@@ -9787,14 +9787,21 @@ var Button2 = function (_React$Component) {
   }
 
   _createClass(Button2, [{
+    key: 'f1',
+    value: function f1() {
+      return 'test';
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'button',
         null,
         this.props.label,
-        ' -- ',
-        this.state.counter
+        '-- ',
+        this.state.counter,
+        '-- ',
+        this.f1()
       );
     }
   }]);

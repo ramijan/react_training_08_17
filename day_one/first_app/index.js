@@ -15,9 +15,17 @@ class Button2 extends React.Component {
     counter: 1
   };
 
+  f1() {
+    return 'test';
+  }
+
   render() {
     return (
-      <button>{this.props.label} -- {this.state.counter}</button>
+      <button>
+        {this.props.label}
+        -- {this.state.counter}
+        -- {this.f1()}
+      </button>
     );
   }
 }
