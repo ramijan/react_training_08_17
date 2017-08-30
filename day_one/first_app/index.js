@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 // called a "class component"
 // only class components have state
-class Button2 extends React.Component {
+class Button2 extends Component {
   state = {
     counter: 1
   };

@@ -9760,8 +9760,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 // called a "class component"
 // only class components have state
-var Button2 = function (_React$Component) {
-  _inherits(Button2, _React$Component);
+var Button2 = function (_Component) {
+  _inherits(Button2, _Component);
 
   function Button2() {
     var _ref;
@@ -9802,7 +9802,7 @@ var Button2 = function (_React$Component) {
   }]);
 
   return Button2;
-}(_react2.default.Component);
+}(_react.Component);
 
 var App = function (_React$PureComponent) {
   _inherits(App, _React$PureComponent);
