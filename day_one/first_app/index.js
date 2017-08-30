@@ -39,8 +39,8 @@ class App extends React.PureComponent {
   render() {
     return (
       <div>
-        <input ref="inputElement" />
-        <a href="#" onClick={()=>{this.refs.inputElement.focus();}}>Focus Input</a>
+        <input ref={(inputElement) => {this.inputElement = inputElement;}} />
+        <a href="#" onClick={()=>{this.inputElement.focus();}}>Focus Input</a>
         <Button2 label="Save2" />
       </div>
     );

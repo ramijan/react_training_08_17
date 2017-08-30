@@ -9828,11 +9828,13 @@ var App = function (_React$PureComponent) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement('input', { ref: 'inputElement' }),
+        _react2.default.createElement('input', { ref: function ref(inputElement) {
+            _this3.inputElement = inputElement;
+          } }),
         _react2.default.createElement(
           'a',
           { href: '#', onClick: function onClick() {
-              _this3.refs.inputElement.focus();
+              _this3.inputElement.focus();
             } },
           'Focus Input'
         ),
