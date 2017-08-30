@@ -16,7 +16,8 @@ class Button2 extends React.Component {
   };
 
   // simpler way to bind this, but it's stage-3
-  f1 = () => {
+  incrementCounter = (event) => {
+    event.preventDefault();
     // setState is like "merge with current state"
     // if you are going to use previous state to calculate new state, better
     // to use function argument instead of object.  Because setState is async
@@ -27,7 +28,7 @@ class Button2 extends React.Component {
 
   render() {
     return (
-      <button onClick={this.f1}>
+      <button type="submit" onClick={this.incrementCounter}>
         {this.state.counter}
       </button>
     );

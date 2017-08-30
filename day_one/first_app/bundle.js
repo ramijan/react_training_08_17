@@ -9783,7 +9783,8 @@ var Button2 = function (_React$Component) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Button2.__proto__ || Object.getPrototypeOf(Button2)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       counter: 1
-    }, _this.f1 = function () {
+    }, _this.incrementCounter = function (event) {
+      event.preventDefault();
       // setState is like "merge with current state"
       // if you are going to use previous state to calculate new state, better
       // to use function argument instead of object.  Because setState is async
@@ -9801,7 +9802,7 @@ var Button2 = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'button',
-        { onClick: this.f1 },
+        { type: 'submit', onClick: this.incrementCounter },
         this.state.counter
       );
     }
