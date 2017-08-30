@@ -1,6 +1,7 @@
 const path = require('path');
 
 const config = {
+  devtool: 'eval-source-map',
   entry: './index.js',
   output: {
     path: path.resolve(__dirname),
