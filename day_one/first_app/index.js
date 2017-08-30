@@ -6,6 +6,7 @@ setInterval(() => {
   const jsTree = `
     <div>
       <h2>Hello JS</h2>
+      <input />
       <span>${new Date()}</span>
     </div>
   `;
@@ -19,6 +20,10 @@ setInterval(() => {
       'Hello React'
     ),
     React.createElement(
+      'input',
+      null
+    ),
+    React.createElement(
       'span',
       null,
       new Date().toString()
@@ -30,4 +35,5 @@ setInterval(() => {
     tree,
     document.getElementById('root')
   );
+
 }, 1000);
