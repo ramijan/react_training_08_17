@@ -19,15 +19,14 @@ class Button2 extends React.Component {
   f1 = () => {
     // setState is like "merge with current state"
     this.setState({
-      counter: 2
+      counter: this.state.counter+1;
     });
   }
 
   render() {
     return (
       <button onClick={this.f1}>
-        {this.props.label}
-        -- {this.state.counter}
+        {this.state.counter}
       </button>
     );
   }
