@@ -9750,26 +9750,23 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-setInterval(function () {
-
-  var tree = _react2.default.createElement(
-    'div',
+var tree = _react2.default.createElement(
+  'div',
+  null,
+  _react2.default.createElement(
+    'h2',
     null,
-    _react2.default.createElement(
-      'h2',
-      null,
-      'Hello React'
-    ),
-    _react2.default.createElement('input', null),
-    _react2.default.createElement(
-      'span',
-      null,
-      new Date().toString()
-    )
-  );
+    'Hello React'
+  ),
+  _react2.default.createElement('input', null),
+  _react2.default.createElement(
+    'span',
+    null,
+    new Date().toString()
+  )
+);
 
-  _reactDom2.default.render(tree, document.getElementById('root'));
-}, 1000);
+_reactDom2.default.render(tree, document.getElementById('root'));
 
 /***/ }),
 /* 82 */

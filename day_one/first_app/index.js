@@ -1,17 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-setInterval(() => {
-
-  const tree = <div>
+const tree = (
+  <div>
     <h2>Hello React</h2>
     <input />
     <span>{new Date().toString()}</span>
-  </div>;
+  </div>
+);
 
-  ReactDOM.render(
-    tree,
-    document.getElementById('root')
-  );
-
-}, 1000);
+ReactDOM.render(
+  tree,
+  document.getElementById('root')
+);
