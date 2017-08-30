@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // react 'component'
-function Button() {
+function Button(props) {
+  console.log(props)
   return (
     <button>Go</button>
   );
 }
 
+// second syntax for react component
 class Button2 extends React.Component {
   render() {
     return (
@@ -18,7 +20,7 @@ class Button2 extends React.Component {
 
 const tree = (
   <div>
-    <Button />
+    <Button a="1" b="2"/>
     <Button2 />
   </div>
 );
