@@ -12,9 +12,9 @@ setInterval(() => {
   `;
 
   const tree = <div>
-    <h2>Hello JS</h2>
+    <h2>Hello React</h2>
     <input />
-    <span>{new Date()}</span>
+    <span>{new Date().toString()}</span>
   </div>;
 
   document.getElementById('js').innerHTML = jsTree;
