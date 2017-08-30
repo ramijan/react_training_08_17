@@ -1,13 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// called a "function component"
-// function Button(props) {
-//   return (
-//     <button>{props.label}</button>
-//   );
-// }
-
 // called a "class component"
 // only class components have state
 class Button2 extends React.Component {
