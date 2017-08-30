@@ -11,12 +11,9 @@ import ReactDOM from 'react-dom';
 // called a "class component"
 // only class components have state
 class Button2 extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      counter: 1
-    };
-  }
+  state = {
+    counter: 1
+  };
 
   render() {
     return (
