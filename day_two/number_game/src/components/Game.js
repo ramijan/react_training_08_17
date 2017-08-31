@@ -6,12 +6,12 @@ class Game extends React.Component {
   static propTypes = {
     numberCount: PropTypes.number.isRequired,
   }
-  constructor() {
+  constructor(props) {
     super();
     // Generate target
     // this.target = Math.floor(10 + (40 * Math.random()));
     // Generate random numbers
-    // this.randomNumbers = [];
+    this.randomNumbers = Array.from({length: props.numberCount}).map(() => randomNumberGenerator());
   }
   render() {
     return (
@@ -19,6 +19,7 @@ class Game extends React.Component {
         <div id="target">...</div>
         <div id="random-numbers">
           TESTING: {this.props.numberCount}
+          {this.randomNumbers}
         </div>
       </div>
     );
