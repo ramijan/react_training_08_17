@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { randomNumberGenerator } from "../store/util";
-import RandomNumbersPanel from './RandomNumbersPanel'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { randomNumberGenerator } from '../store/util';
+import RandomNumbersPanel from './RandomNumbersPanel';
 
 class Game extends React.Component {
   static propTypes = {
@@ -15,7 +15,6 @@ class Game extends React.Component {
     this.randomNumbers = Array.from({ length: props.numberCount }).map(() =>
       randomNumberGenerator()
     );
-    console.log(this.randomNumbers.slice(0, this.randomNumbers.length - 2));
     this.target = this.randomNumbers
       .slice(0, this.randomNumbers.length - 2)
       .reduce((acc, curr) => acc + curr, 0);
