@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 class NumberTile extends React.Component {
   static propTypes = {
-    number: PropTypes.number.isRequired
+    number: PropTypes.number.isRequired,
+    selected: PropTypes.bool
   };
   handleClick = () => {
     console.log(this.props.number);
@@ -11,7 +12,11 @@ class NumberTile extends React.Component {
 
   render() {
     return (
-      <div className="number" onClick={this.handleClick}>
+      <div
+        className="number"
+        onClick={this.handleClick}
+        style={{ opacity: this.props.selected ? 0.3 : 1 }}
+      >
         {this.props.number}
       </div>
     );
