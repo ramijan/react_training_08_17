@@ -11,10 +11,10 @@
     minimize re-rendering because React will re-render every time state changes
 */
 
+import * as Redux from 'redux';
 
 const initialState = {
-  selectedNumbers: [],
-
+  selectedNumbers: [0, 2]
 };
 
 console.log('Store loaded...');
