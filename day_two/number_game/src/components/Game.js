@@ -40,21 +40,19 @@ class Game extends React.Component {
   }
 
   gameStatus = () => {
-    if (this.props.remainingSeconds <= 0) {
-      clearInterval(this.intervalId);
-      return 'lost';
-    }
     const sumSelected = this.props.selectedNumbers.reduce(
       (acc, curr) => acc + this.randomNumbers[curr],
       0
     );
-    if (sumSelected > this.target) {
+    if (sumSelected < this.target && this.props.remainingSeconds > 0) {
+      return 'playing';
+    }
+    clearInterval(this.intervalId);
+    if (sumSelected > this.target || this.props.remainingSeconds <= 0) {
       return 'lost';
     }
     if (sumSelected === this.target) {
       return 'won';
-    } else {
-      return 'playing';
     }
   };
   targetPanelColor(gameStatus) {
