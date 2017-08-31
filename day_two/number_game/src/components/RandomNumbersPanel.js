@@ -16,6 +16,7 @@ const RandomNumbersPanel = (props) => {
           number={number}
           selected={isNumberTileSelected(index)}
           id={index}
+          canPlay={props.canPlay}
           onClick={props.selectNumber}
         />
       ))}
@@ -26,17 +27,20 @@ const RandomNumbersPanel = (props) => {
 RandomNumbersPanel.propTypes = {
   randomNumbers: PropTypes.arrayOf(PropTypes.number).isRequired,
   selectNumber: PropTypes.func.isRequired,
-  selectedNumbers: PropTypes.arrayOf(PropTypes.number).isRequired
+  selectedNumbers: PropTypes.arrayOf(PropTypes.number).isRequired,
+  canPlay: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = (state) => {
   // return state; this is dangerous
   return { selectedNumbers: state.selectedNumbers };
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     selectNumber: (numberIndex) => {
+      // if (ownProps.canPlay) {
       dispatch({ type: 'SELECT_NUMBER', payload: { index: numberIndex } });
+      // }
     }
   };
 };
