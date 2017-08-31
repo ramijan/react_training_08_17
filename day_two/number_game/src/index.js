@@ -4,12 +4,11 @@ import ReactDOM from 'react-dom';
 import './store';
 import './styles/index.scss';
 
-import Game from './components/Game';
+import App from './components/App';
 
 ReactDOM.render(
   <div>
-    <Game />
-    <Game />
+    <App />
   </div>,
   document.getElementById('root')
 );
