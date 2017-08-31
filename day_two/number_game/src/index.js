@@ -7,6 +7,9 @@ import './styles/index.scss';
 import Game from './components/Game';
 
 ReactDOM.render(
-  <Game />,
+  <div>
+    <Game />
+    <Game />
+  </div>,
   document.getElementById('root')
 );
