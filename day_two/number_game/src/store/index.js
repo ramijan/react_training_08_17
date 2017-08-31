@@ -17,27 +17,31 @@ const initialState = {
   selectedNumbers: []
 };
 
-const reducer = (state, action) => {
-  // console.log('Calling reducer', action);
-  // if (action.type === 'TEST1') {
-  //   return {
-  //     ...state,
-  //     counter: 1
-  //   };
-  // }
-  //
-  // if (action.type === 'TEST2') {
-  //   return {
-  //     ...state,
-  //     counter: state.counter + 1
-  //   };
-  // }
+const actionFunctions = {
+  SELECT_NUMBER: (state, payload) => {
+    return {
+      ...state,
+      selectedNumbers: [...state.selectedNumbers, payload.index]
+    };
+  }
+};
 
-  return state;
+const reducer = (state, action) => {
+  const actionFunction = actionFunctions[action.type];
+  if (!actionFunction) {
+    return state;
+  }
+  return actionFunction(state, action.payload);
 };
 
 const store = Redux.createStore(reducer, initialState);
 // console.log(store);
+// console.log('Get state', store.getState());
+// store.dispatch({ type: 'SELECT_NUMBER', payload: { index: 3 } });
+// console.log('Get state', store.getState());
+// store.dispatch({ type: 'SELECT_NUMBER', payload: { index: 5 } });
+// console.log('Get state', store.getState());
+// store.dispatch({ type: 'SELECT_NUMBER', payload: { index: 7 } });
 // console.log('Get state', store.getState());
 //
 // store.dispatch({ type: 'TEST1' });

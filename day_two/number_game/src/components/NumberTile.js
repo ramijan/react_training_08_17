@@ -4,13 +4,18 @@ import PropTypes from 'prop-types';
 class NumberTile extends React.Component {
   static propTypes = {
     number: PropTypes.number.isRequired,
-    selected: PropTypes.bool
+    id: PropTypes.number.isRequired,
+    selected: PropTypes.bool.isRequired,
+    onClick: PropTypes.func.isRequired
   };
   handleClick = () => {
-    console.log(this.props.number);
+    this.props.onClick(this.props.id);
   };
-
+  static contextTypes = {
+    store: PropTypes.object
+  };
   render() {
+    console.log(this.context);
     return (
       <div
         className="number"
