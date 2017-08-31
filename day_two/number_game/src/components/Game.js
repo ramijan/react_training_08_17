@@ -10,7 +10,8 @@ class Game extends React.Component {
     numberCount: PropTypes.number.isRequired,
     selectedNumbers: PropTypes.arrayOf(PropTypes.number).isRequired,
     decrementTime: PropTypes.func.isRequired,
-    remainingSeconds: PropTypes.number.isRequired
+    remainingSeconds: PropTypes.number.isRequired,
+    resetGame: PropTypes.func.isRequired
   };
   constructor(props) {
     super();
@@ -83,6 +84,9 @@ class Game extends React.Component {
           randomNumbers={this.randomNumbers}
         />
         {gameStatus}
+        {gameStatus !== 'playing' && (
+          <button onClick={this.props.resetGame}>Play again</button>
+        )}
       </div>
     );
   }
