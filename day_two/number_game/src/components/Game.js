@@ -11,7 +11,8 @@ class Game extends React.Component {
     selectedNumbers: PropTypes.arrayOf(PropTypes.number).isRequired,
     decrementTime: PropTypes.func.isRequired,
     remainingSeconds: PropTypes.number.isRequired,
-    resetGame: PropTypes.func.isRequired
+    resetGame: PropTypes.func.isRequired,
+    updateScore: PropTypes.func.isRequired
   };
   constructor(props) {
     super();
@@ -53,6 +54,7 @@ class Game extends React.Component {
       return 'lost';
     }
     if (sumSelected === this.target) {
+      this.props.updateScore(this.props.remainingSeconds);
       return 'won';
     }
   };
@@ -70,7 +72,7 @@ class Game extends React.Component {
     const gameStatus = this.gameStatus();
     return (
       <div id="game">
-        {this.props.remainingSeconds}
+        <div id="time">Time: {this.props.remainingSeconds}</div>
         <div
           id="target"
           style={{
