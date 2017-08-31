@@ -34,21 +34,11 @@ const reducer = (state, action) => {
   return actionFunction(state, action.payload);
 };
 
-const store = Redux.createStore(reducer, initialState);
-// console.log(store);
-// console.log('Get state', store.getState());
-// store.dispatch({ type: 'SELECT_NUMBER', payload: { index: 3 } });
-// console.log('Get state', store.getState());
-// store.dispatch({ type: 'SELECT_NUMBER', payload: { index: 5 } });
-// console.log('Get state', store.getState());
-// store.dispatch({ type: 'SELECT_NUMBER', payload: { index: 7 } });
-// console.log('Get state', store.getState());
-//
-// store.dispatch({ type: 'TEST1' });
-// console.log('getState', store.getState());
-// store.dispatch({ type: 'TEST2' });
-// console.log('getState', store.getState());
-// store.dispatch({ type: 'TEST2' });
-// console.log('getState', store.getState());
+const getStore = () =>
+  Redux.createStore(
+    reducer,
+    initialState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
 
-export default store;
+export default getStore;

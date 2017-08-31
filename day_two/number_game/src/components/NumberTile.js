@@ -15,7 +15,6 @@ class NumberTile extends React.Component {
     store: PropTypes.object
   };
   render() {
-    console.log(this.context);
     return (
       <div
         className="number"
