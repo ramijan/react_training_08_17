@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import NumberTile from './NumberTile';
 
 const RandomNumbersPanel = (props) => {
   return (
     <div id="random-numbers">
       {props.randomNumbers.map((number, index) => (
-        <div key={index}>{number}</div>
+        <NumberTile key={index} number={number} />
       ))}
     </div>
   );
