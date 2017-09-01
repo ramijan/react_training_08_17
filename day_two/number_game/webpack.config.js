@@ -1,5 +1,5 @@
 const path = require('path');
-
+const webpack = require('webpack');
 const config = {
   devtool: 'eval-source-map',
   entry: './src/index.js',
@@ -7,20 +7,34 @@ const config = {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js'
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin()
+  ],
   module: {
     rules: [
-      { test: /\.js$/,
+      {
+        test: /\.js$/,
         exclude: /node_modules/,
-        use: 'babel-loader' },
+        use: 'babel-loader'
+      },
       {
         test: /\.scss$/,
-        use: [{
-          loader: 'style-loader' // creates style nodes from JS strings
-        }, {
-          loader: 'css-loader' // translates CSS into CommonJS
-        }, {
-          loader: 'sass-loader' // compiles Sass to CSS
-        }]
+        use: [
+          {
+            loader: 'style-loader' // creates style nodes from JS strings
+          },
+          {
+            loader: 'css-loader' // translates CSS into CommonJS
+          },
+          {
+            loader: 'sass-loader' // compiles Sass to CSS
+          }
+        ]
       }
     ]
   }

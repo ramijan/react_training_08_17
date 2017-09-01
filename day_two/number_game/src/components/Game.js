@@ -4,6 +4,7 @@ import { randomNumberGenerator } from '../store/util';
 import RandomNumbersPanel from './RandomNumbersPanel';
 import { connect } from 'react-redux';
 import { decrementTime } from '../store/actions';
+import shuffle from 'lodash.shuffle';
 
 class Game extends React.Component {
   static propTypes = {
@@ -22,6 +23,7 @@ class Game extends React.Component {
     this.target = this.randomNumbers
       .slice(0, this.randomNumbers.length - 2)
       .reduce((acc, curr) => acc + curr);
+    this.randomNumbers = shuffle(this.randomNumbers);
   }
 
   // life cycle methods
